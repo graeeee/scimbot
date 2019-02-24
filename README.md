@@ -1,2 +1,2 @@
-# scimbot
-scimbot
+# raidbot-bot
+bot using herooku
