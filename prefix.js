@@ -12,7 +12,7 @@ module.exports.run = async (bot, message, args) => {
     prefix: args[0]
   };
   
-  fs.writeFile("./prefix.json", JSON.stringify(prefix), (err) => {
+  fs.writeFile("./prefixes.json", JSON.stringify(prefix), (err) => {
     if (err) console.log(err)
   });
   
