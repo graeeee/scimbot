@@ -18,7 +18,7 @@ client.on("message", async message => {
     let badword = (`nigger`)
    
             if(cmd === badword){
-                message.channel.send("wtf <:551240721584357377:>");
+                message.channel.send("wtf :551240721584357377:");
             }
 });
 client.login(process.env.BOT_TOKEN);
