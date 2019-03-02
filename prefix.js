@@ -3,6 +3,8 @@ const fs = require("fs");
 
 module.exports.run = async (bot, message, args) => {
 
+  let cmd = messageArray[0];
+  if(cmd === `${prefix}`){
   if(!message.member.hasPermission("MANAGE_SERVER")) return message.channel.send("You have no permission");
   if(!args[0] || args[0 == "help"]) return message.channel.send("**Usage:** !prefix <your prefix>");
 
