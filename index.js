@@ -27,6 +27,8 @@ client.on("message", async message => {
 });
 client.on("message", async message => {
   
+  if (message.channel.type != 'text') return message.channel.send('This command is for in server use only.')
+  
   db.fetchObject(`guildPrefix_${message.guild.id}`).then(i => {
   
     let prefix;
