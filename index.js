@@ -37,5 +37,5 @@ client.on("message", async message => {
     } else {
       prefix = 'cb-'
     }
-    
+  });
 client.login(process.env.BOT_TOKEN);
