@@ -18,10 +18,7 @@ client.on("message", async message => {
     let badword = (`nigger`)
    
             if(cmd === badword){
-                let botembed = new Discord.RichEmbed()
-                .setColor("#008000")
-                .setDescription(`<:551240721584357377:>`);  
-                message.channel.send(botembed);
+                message.channel.send("wtf <:551240721584357377:>");
             }
 });
 client.login(process.env.BOT_TOKEN);
