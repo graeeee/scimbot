@@ -33,7 +33,7 @@ client.on("message", async message => {
   
     let prefix;
     if (i.text) {
-      prefix
+      prefix = i.text
     } else {
       prefix = 'cb-'
     }
