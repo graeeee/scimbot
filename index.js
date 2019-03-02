@@ -2,6 +2,7 @@ const botconfig =require("./botconfig.json");
 const Discord = require("discord.js");
 const client = new Discord.Client({diableEveryone: true});
 const fs = require("fs");
+const db = require("quick.db");
 
 
 client.on("ready", async () => {
@@ -26,22 +27,13 @@ client.on("message", async message => {
 });
 client.on("message", async message => {
   
-  if(message.author.bot) return;
-  if(message.channel.type === "dm") return;
+  db.fetchObject(`guildPrefix_${message.guild.id}`).then(i => {
   
-  let prefixes = JSON.parse(fs.readFileSync("./prefixes.json", "utf8"));
-  
-  if(!prefixes[message.guild.id]){
-    prefixes[message.guild.id] = {
-      prefixes: botconfig.prefix
-    };
-  }
-  
-  let prefix = prefixes[message.guild.id].prefixes;
-  console.log(prefix)
-  let messageArray = message.content.split(" ");
-  let cmd = messageArray[0]
-  let args = messageArray.slice(1);
-      
-  });
+    let prefix;
+    if (i.text) {
+      prefix
+    } else {
+      prefix = 'cb-'
+    }
+    
 client.login(process.env.BOT_TOKEN);
