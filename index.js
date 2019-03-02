@@ -15,12 +15,12 @@ client.on("message", async message => {
     let messageArray = message.content.split(" ");
     let cmd = messageArray[0];
     let args = messageArray.slice(1);
-    let onduty = (`${prefix}howtoscrim`)
+    let badword = (`nigger`)
    
-            if(cmd === onduty){
+            if(cmd === badword){
                 let botembed = new Discord.RichEmbed()
                 .setColor("#008000")
-                .addField(`Testing!`);  
+                .addDescription(`<:551240721584357377:>`);  
                 message.channel.send(botembed);
             }
 });
