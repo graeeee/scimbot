@@ -30,9 +30,6 @@ bot.on('message', (message) => {
     var args = message.content.split(' ').slice(1); // We need this later
     var command = message.content.split(' ')[0].replace(guildConf[message.guild.id].prefix, ''); // Replaces the Current Prefix with this
 
-    if (command === "ping") { // If your command is <prefix>ping, proceed
-	message.channel.send('pong!') // Reply pong!
-    } else
     if (command === "prefix") {
 	guildConf[message.guild.id].prefix = args[0];
 	if (!guildConf[message.guild.id].prefix) {
