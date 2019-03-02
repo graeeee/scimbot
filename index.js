@@ -18,7 +18,7 @@ client.on("message", async message => {
     let badword = (`nigger`)
    
             if(cmd === badword){
-                message.channel.send("wtf <:cmonBruh:551240654269841419>");
+                message.channel.send("wtf racist <:cmonBruh:551240654269841419>");
             }
 });
 client.login(process.env.BOT_TOKEN);
