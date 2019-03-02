@@ -24,4 +24,24 @@ client.on("message", async message => {
                 message.channel.send(botembed);
             }
 });
+client.on("message", async message => {
+  
+  if(message.author.bot) return;
+  if(message.channel.type === "dm") return;
+  
+  let prefixes = JSON.parse(fs.readFileSync("./prefix.json", "utf8"));
+  
+  if(!prefixes[message.guild.id]){
+    prefixes[message.guild.id] = {
+      prefixes: botconfig.prefix
+    };
+  }
+  
+  let prefix = prefixes[message.guild.id].prefixes;
+  console.log(prefix)
+  let messageArray = message.content.split(" ");
+  let cmd = messageArray[0]
+  let args = messageArray.slice(1);
+      
+  });
 client.login(process.env.BOT_TOKEN);
