@@ -22,4 +22,11 @@ client.on("message", async message => {
                 message.channel.send(botembed);
             }
 });
+
+client.on("message", async message => {
+  
+  if(message.author.bot) return;
+  if(message.channel.type === "dm") return;
+  
+  let prefixes = JSON.parse(fs.readFileSync("./prefix.json", "utf8"));
 client.login(process.env.BOT_TOKEN);
