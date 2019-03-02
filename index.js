@@ -32,7 +32,7 @@ client.on("message", async message => {
   
   if(!prefixes[message.guild.id]){
     prefixes[message.guild.id] = {
-      prefixes: botconfig.prefix;
+      prefixes: botconfig.prefix
     };
   }
   
