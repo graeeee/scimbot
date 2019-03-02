@@ -20,7 +20,7 @@ client.on("message", async message => {
             if(cmd === badword){
                 let botembed = new Discord.RichEmbed()
                 .setColor("#008000")
-                .addDescription(`<:551240721584357377:>`);  
+                .setDescription(`<:551240721584357377:>`);  
                 message.channel.send(botembed);
             }
 });
