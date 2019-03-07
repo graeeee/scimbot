@@ -16,7 +16,7 @@ client.on("message", async message => {
     let cmd = messageArray[0];
     let args = messageArray.slice(1);
     let i = ("i","1","l","|")
-    let e = ("e","3",)
+    let e = ("e","3")
     let lmoa = ("g","6")
     let badword = (`n${i}${lmoa}${lmoa}${e}r`)
    
