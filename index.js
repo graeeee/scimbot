@@ -15,7 +15,10 @@ client.on("message", async message => {
     let messageArray = message.content.split(" ");
     let cmd = messageArray[0];
     let args = messageArray.slice(1);
-    let badword = (`nigger`)
+    let i = ("i","1","l","|")
+    let e = ("e","3",)
+    let lmoa = ("g","6")
+    let badword = (`n${i}${lmoa}${lmoa}${e}r`)
    
             if(cmd === badword){
                 message.channel.send("wtf racist <:cmonBruh:551240654269841419>");
