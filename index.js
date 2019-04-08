@@ -15,15 +15,16 @@ client.on("message", async message => {
     let messageArray = message.content.split(" ");
     let cmd = messageArray[0];
     let args = messageArray.slice(1);
-    let badword = (`move`)
    
-            if(cmd === badword){
-                const voicechat = args.join(" ")
-                const user = message.mentions.members.first()
-                const channel = client.channels.find("name", voicechat)
-                user.setVoiceChannel(channel)
-              .then(() => message.channel.send (`Moved ${mem.displayName} to ${chan}`));
-            }
+if (cmd === 'move') {
+  const mem = message.mentions.members.first()
+  const vc = args.join(" ")
+  const chan = client.channels.find("name", vc)
+    mem.setVoiceChannel(chan)
+      .then(() => console.log(`Moved ${mem.displayName} to ${chan}`))
+  .catch(console.error);
+  }
+}
 });
 client.on("message", async message => {
     let prefix = botconfig.prefix;
