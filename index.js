@@ -10,13 +10,12 @@ client.on("ready", async () => {
   client.user.setActivity("Servers! use cb!", {type: "WATCHING"});
 
 });
-client.on("message", async message => {
-    let prefix = botconfig.prefix;
-    let messageArray = message.content.split(" ");
-    let cmd = messageArray[0];
-    let args = messageArray.slice(1);
-   
-if (cmd === 'move') {
+exports.run = function(client, message) {
+
+const args = message.content.slice(config.prefix.length).trim().split(/ +/g);
+const command = args.shift().toLowerCase();      
+
+if (command === 'move') {
   const mem = message.mentions.members.first()
   const vc = args.join(" ")
   const chan = client.channels.find("name", vc)
