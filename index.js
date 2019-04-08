@@ -24,7 +24,6 @@ if (cmd === 'move') {
       .then(() => console.log(`Moved ${mem.displayName} to ${chan}`))
   .catch(console.error);
   }
-}
 });
 client.on("message", async message => {
     let prefix = botconfig.prefix;
