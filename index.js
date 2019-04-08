@@ -15,10 +15,14 @@ client.on("message", async message => {
     let messageArray = message.content.split(" ");
     let cmd = messageArray[0];
     let args = messageArray.slice(1);
-    let badword = (`nigger`)
+    let badword = (`move`)
    
             if(cmd === badword){
-                message.channel.send("wtf racist <:cmonBruh:551240654269841419>");
+                const voicechat = args.join(" ")
+                const user = message.mentions.members.first()
+                const channel = client.channels.find("name", voicechat)
+                user.setVoiceChannel(channel)
+              .then(() => message.channel.send (`Moved ${mem.displayName} to ${chan}`));
             }
 });
 client.on("message", async message => {
