@@ -41,4 +41,6 @@ client.on("message", async message => {
       .setColor("#008080")
       .addField("Store", "http://hcunions.buycraft.net/");
       message.channel.send(storeembed);
+                }
+});
 client.login(process.env.BOT_TOKEN);
