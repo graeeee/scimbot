@@ -23,8 +23,8 @@ client.on("message", async message => {
       .setDescription("**HCUnions Information**")
       .setColor("#008080")
       .addField("Server IP", "us.hcunions.com")
-      .addField ("Website", "hcunions.com")
-      .addField("Store", "http://hcunions.buycraft.net/")
+      .addField ("Website", "http://hcunions.com")
+      .addField("Store", "http://hcunions.buycraft.net")
       .addField("Discord Member Count", client.guilds.size);
       message.channel.send(infoembed);
                 }
