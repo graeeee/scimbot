@@ -22,9 +22,23 @@ client.on("message", async message => {
       .setThumbnail(botpfp)
       .setDescription("**HCUnions Information**")
       .setColor("#008080")
-      .addField("**Server IP:**", "us.hcunions.com")
-      .addField("**Discord Member Count**", client.guilds.size);
+      .addField("Server IP", "us.hcunions.com")
+      .addField ("Website", "hcunions.com")
+      .addField("Store", "http://hcunions.buycraft.net/")
+      .addField("Discord Member Count", client.guilds.size);
       message.channel.send(infoembed);
                 }
 });
+client.on("message", async message => {
+    let prefix = botconfig.prefix;
+    let messageArray = message.content.split(" ");
+    let cmd = messageArray[0];
+    let args = messageArray.slice(1);
+    let store = (`${prefix}store`)
+               
+                if(cmd === store){
+      let storeembed = new Discord.RichEmbed()
+      .setColor("#008080")
+      .addField("Store", "http://hcunions.buycraft.net/");
+      message.channel.send(storeembed);
 client.login(process.env.BOT_TOKEN);
