@@ -1,7 +1,6 @@
 const botconfig =require("./botconfig.json");
 const Discord = require("discord.js");
 const client = new Discord.Client({diableEveryone: true});
-const fs = require("fs");
 
 
 client.on("ready", async () => {
@@ -25,6 +24,7 @@ client.on("message", async message => {
       .setColor("#008080")
       .addField("**Server IP:**", "us.hcunions.com")
       .addField("**Discord Member Count**", client.guilds.size);
+      message.channel.send(infoembed);
                 }
 });
 client.login(process.env.BOT_TOKEN);
