@@ -24,7 +24,7 @@ client.on("message", async message => {
       .setDescription("**HCUnions Information**")
       .setColor("#008080")
       .addField("**Server IP:**", "us.hcunions.com")
-      .addField("Discord Member Count", client.guilds.size);
+      .addField("**Discord Member Count**", client.guilds.size);
                 }
 });
 client.login(process.env.BOT_TOKEN);
