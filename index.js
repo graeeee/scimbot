@@ -7,7 +7,7 @@ const fs = require("fs");
 client.on("ready", async () => {
   console.log(`${client.user.username} is online!`);
 
-  client.user.setActivity("Servers! use cb!", {type: "WATCHING"});
+  client.user.setActivity("HCUnions discord!", {type: "WATCHING"});
 
 });
 exports.run = function(client, message) {
