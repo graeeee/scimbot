@@ -46,7 +46,7 @@ client.on("message", async message => {
 client.on("guildMemberAdd"), member => {
   let joinchannel = member.guild.channels.find('name', 'new-members');
   let memberpfp = member.user.avatarURL
-        let joinembed = new Discord.RichEmbed()
+  let joinembed = new Discord.RichEmbed()
       .setColor("#008080")
       .setThumbnail(memberpfp)
       .setDescription("New User")
