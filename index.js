@@ -25,7 +25,7 @@ client.on("message", async message => {
       .addField ("Website", "http://hcunions.org")
       .addField("Store", "http://hcunions.buycraft.net")
       .addField("Server IP", "hcunions.org")
-      .addField("Discord Member Count", client.guilds.size);
+      .addField("Discord Member Count", `${message.guild.memberCount}`);
       message.channel.send(infoembed);
                 }
 });
