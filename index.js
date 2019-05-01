@@ -43,7 +43,7 @@ client.on("message", async message => {
       message.channel.send(storeembed);
                 }
 });
-bot.on('guildMemberAdd', member => {
+client.on('guildMemberAdd', member => {
 let logChannel = member.guild.channels.find('name', 'new-members');
 
   let logEmbed = new Discord.RichEmbed()
