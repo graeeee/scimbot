@@ -6,7 +6,7 @@ const client = new Discord.Client({diableEveryone: true});
 client.on("ready", async () => {
   console.log(`${client.user.username} is online!`);
 
-  client.user.setActivity("HCUnions discord!", {type: "WATCHING"});
+  client.user.setActivity("hcunions.org | !info", {type: "PLAYING"});
 
 });
 client.on("message", async message => {
