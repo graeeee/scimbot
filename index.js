@@ -43,10 +43,15 @@ client.on("message", async message => {
       message.channel.send(storeembed);
                 }
 });
-client.on('guildMemberAdd', member => {
-    let prefix = botconfig.prefix;
-    let cmd = messageArray[0];
-    let args = messageArray.slice(1);
-  client.channels.get("572945556259864578").send("test");
-});
+bot.on('guildMemberAdd', member => {
+let logChannel = member.guild.channels.find('name', 'new-members');
+
+  let logEmbed = new Discord.RichEmbed()
+  .setAuthor("BCore | Logs") 
+  .setDescription(member.user.username + " je ``usao`` na server. (" + member.user.id + ")")
+  .setColor('RANDOM')
+  .setFooter("Igrac se pridruzio", member.user.displayAvatarURL)
+  .setTimestamp()
+  logChannel.send(logEmbed);
+})
 client.login(process.env.BOT_TOKEN);
