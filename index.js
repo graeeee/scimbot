@@ -44,6 +44,10 @@ client.on("message", async message => {
                 }
 });
 client.on('guildMemberAdd', member => {
+      let prefix = botconfig.prefix;
+    let messageArray = message.content.split(" ");
+    let cmd = messageArray[0];
+    let args = messageArray.slice(1);
   message.channel.send("572945556259864578").send("test");
 });
 client.login(process.env.BOT_TOKEN);
