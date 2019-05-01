@@ -49,7 +49,7 @@ let joinChannel = member.guild.channels.find('name', 'new-members');
   let joinEmbed = new Discord.RichEmbed()
   .setAuthor("New User Joined") 
   .setThumbnail(member.user.avatarURL)
-  .setDescription(`<@${member.user.username}> has joined the server\n\nCurrent member count: ${member.guild.memberCount}`)
+  .setDescription(`<@${member.id}> has joined the server\n\nCurrent member count: ${member.guild.memberCount}`)
   .setColor('#008080')
   .setFooter(member.user.username, member.user.displayAvatarURL)
   .setTimestamp()
