@@ -43,19 +43,4 @@ client.on("message", async message => {
       message.channel.send(storeembed);
                 }
 });
-client.on("guildMemberAdd"), member => {
-  
-  let guild = message.guild;
-  let memberCount = client.users.size;
-  let joinchannel = member.guild.channels.find('name', 'new-members');
-  let joinembed = new Discord.RichEmbed()
-      .setColor("#008080")
-      .setThumbnail(member.user.avatarURL)
-      .setDescription(`New User`)
-      .addField(`New User:`, `<@${member}>`)
-      .addField(`Member Count:`, `${member.guild.memberCount}`)
-      .setTimestamp();
-  message.channel.send(joinembed);
-}
-});
 client.login(process.env.BOT_TOKEN);
