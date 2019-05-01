@@ -44,15 +44,15 @@ client.on("message", async message => {
                 }
 });
 client.on('guildMemberAdd', member => {
-let logChannel = member.guild.channels.find('name', 'new-members');
+let joinChannel = member.guild.channels.find('name', 'new-members');
 
-  let logEmbed = new Discord.RichEmbed()
-  .setAuthor("New user joined") 
+  let joinEmbed = new Discord.RichEmbed()
+  .setAuthor("New User Joined") 
   .setThumbnail(member.user.avatarURL)
-  .setDescription(`${member.user.username} has joined the server`)
+  .setDescription(`<@${member.user.username}> has joined the server\n\nCurrent member count: ${message.guild.memberCount}`)
   .setColor('#008080')
   .setFooter(member.user.username, member.user.displayAvatarURL)
   .setTimestamp()
-  logChannel.send(logEmbed);
+  joinChannel.send(joinEmbed);
 })
 client.login(process.env.BOT_TOKEN);
