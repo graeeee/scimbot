@@ -43,4 +43,7 @@ client.on("message", async message => {
       message.channel.send(storeembed);
                 }
 });
+client.on('guildMemberAdd', member => {
+  let joinChannel = message.guild.channels.find(`name`, "new-members");
+  message.channel.send('test');
 client.login(process.env.BOT_TOKEN);
