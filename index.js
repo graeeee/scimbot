@@ -43,7 +43,7 @@ client.on("message", async message => {
       message.channel.send(storeembed);
                 }
 });
-client.on("guildMemberAdd") member => {
+client.on("guildMemberAdd"), member => {
   let joinchannel = member.guild.channels.find('name', 'new-members');
   let memberpfp = member.user.avatarURL
         let joinembed = new Discord.RichEmbed()
