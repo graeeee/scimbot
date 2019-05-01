@@ -55,41 +55,4 @@ let joinChannel = member.guild.channels.find('name', 'new-members');
   .setTimestamp()
   joinChannel.send(joinEmbed);
 })
-    let prefix = botconfig.prefix;
-    let messageArray = message.content.split(" ");
-    let cmd = messageArray[0];
-    let args = messageArray.slice(1);
-if (cmd.toLowerCase() == `${prefix}giveaway`){
-  var item = "";
-  var time;
-  var winnerCount;
-  //giveaway (amount of winners) (time till giveaway) (item)
-  
-  for (var i = 3; i < messageArray.length; i++){
-    item += (messageArray[i] + " ");
-  }
-  winnerCount= Number(messageArray[1]);
-  time = Number(messageArray[2]);
-  var embed = new Discord.RichEmbed();
-  embed.setDescription(item);
-  var embedSent = await message.channel.send(embed);
-  embedSent.react("🎉");
-  setTimeout()
-    var peopleReacted = embedSent.reactions.get("🎉").users;
-    var index = Math.floor(Math.random() * peopleReacted.length);
-}
-for (var i = 0 < winners.length; i++){
-  winnersMessage += (winners[i].toString() + " ");
-}
-var haveHas = "has";
-if (winners.length == 1){
-  haveHas = "has";
-}
-else {
-  haveHas = "have";
-}
-message.channel.send(winnerMessage + " " + haveHas + `won ${item}`);
-  }, time * 1000);
-}
-  
 client.login(process.env.BOT_TOKEN);
