@@ -47,7 +47,6 @@ client.on("guildMemberAdd"), member => {
   
   let guild = message.guild;
   let memberCount = client.users.size;
-  let member = message;
   let joinchannel = member.guild.channels.find('name', 'new-members');
   let memberpfp = member.user.avatarURL
   let joinembed = new Discord.RichEmbed()
