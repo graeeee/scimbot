@@ -58,5 +58,5 @@ client.on("guildMemberAdd"), member => {
       .setTimestamp();
   message.channel.send(joinembed);
 }
-});
+})
 client.login(process.env.BOT_TOKEN);
