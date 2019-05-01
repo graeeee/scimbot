@@ -22,9 +22,9 @@ client.on("message", async message => {
       .setThumbnail(botpfp)
       .setDescription("**HCUnions Information**")
       .setColor("#008080")
-      .addField ("Website", "http://hcunions.com")
+      .addField ("Website", "http://hcunions.org")
       .addField("Store", "http://hcunions.buycraft.net")
-      .addField("Server IP", "us.hcunions.com")
+      .addField("Server IP", "hcunions.org")
       .addField("Discord Member Count", client.guilds.size);
       message.channel.send(infoembed);
                 }
