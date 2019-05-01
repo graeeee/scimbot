@@ -47,10 +47,11 @@ client.on('guildMemberAdd', member => {
 let logChannel = member.guild.channels.find('name', 'new-members');
 
   let logEmbed = new Discord.RichEmbed()
-  .setAuthor("BCore | Logs") 
-  .setDescription(member.user.username + " je ``usao`` na server. (" + member.user.id + ")")
-  .setColor('RANDOM')
-  .setFooter("Igrac se pridruzio", member.user.displayAvatarURL)
+  .setAuthor("New user joined") 
+  .setThumbnail(member.user.avatarURL)
+  .setDescription(`${member.user.username} has joined the server`)
+  .setColor('#008080')
+  .setFooter(member.user.username, member.user.displayAvatarURL)
   .setTimestamp()
   logChannel.send(logEmbed);
 })
