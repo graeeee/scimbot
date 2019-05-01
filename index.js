@@ -68,7 +68,7 @@ client.on("guildMemberAdd"), member => {
       .addField("Member Count:", `${member.guild.memberCount}`)
       .setTimestamp();
   message.channel.send(joinembed);
-});
+}
 }
 });
 client.login(process.env.BOT_TOKEN);
