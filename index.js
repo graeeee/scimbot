@@ -4,7 +4,7 @@ const client = new Discord.Client();
 
 
 client.on("ready", async () => {
-  console.log(`${client.user.username} is online!`);
+  console.log(`npm i request`);
 
   client.user.setActivity("hcunions.org | !info", {type: "PLAYING"});
 
