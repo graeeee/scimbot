@@ -43,6 +43,31 @@ client.on("message", async message => {
       message.channel.send(storeembed);
                 }
 });
+module.exports.run = async (bot, msg, args) => {
+  var request = require("request");
+  var mcIP = "167.114.117.3"
+  var mcPort = "40937";
+  
+var url = "http://mcapi.us/server/status?ip=" + mcIP + '&port' + mcPort;
+  request(url, function(err, response, body) {
+    if(err) msg.channel.send(err);
+  });
+          body = JSON.parse(body);
+  var status = `**HCUnions Status: ${mcIP}, is currently offline`;
+  if(body.online) {
+    status = `**HCUnions Status: ${mcIP}, is currently online`;
+    if(body.players.now) {
+      status += '**' + body.players.now + '** people are playing';
+    } else {
+      status += '**No one is online right now';
+  }
+}
+  msg.replay(status);
+});
+
+module.exports.help = {
+  name: "Status"
+}
 client.on('guildMemberAdd', member => {
 let joinChannel = member.guild.channels.find('name', 'new-members');
 
@@ -55,4 +80,5 @@ let joinChannel = member.guild.channels.find('name', 'new-members');
   .setTimestamp()
   joinChannel.send(joinEmbed);
 })
+
 client.login(process.env.BOT_TOKEN);
