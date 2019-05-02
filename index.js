@@ -62,8 +62,9 @@ var url = "http://mcapi.us/server/status?ip=" + mcIP + '&port' + mcPort;
       status += '**No one is online right now';
   }
 }
+}
   msg.replay(status);
-})
+});
 
 module.exports.help = {
   name: "Status"
