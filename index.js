@@ -63,7 +63,7 @@ var url = "http://mcapi.us/server/status?ip=" + mcIP + '&port' + mcPort;
   }
 }
   msg.replay(status);
-});
+})
 
 module.exports.help = {
   name: "Status"
