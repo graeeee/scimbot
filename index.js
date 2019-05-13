@@ -68,9 +68,7 @@ client.on("message", message => {
         .setTitle("Server Announcement")
         .setDescription(ann)
         .setColor('#1247B5');
-        message.channel.send(everyone);
         message.channel.send(embed);
-        everyone.delete(10000);
     }
   }
 });
