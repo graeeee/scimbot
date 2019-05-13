@@ -62,7 +62,7 @@ client.on("message", message => {
     let args = messageArray.slice(1);
     let everyone = message.channel.send("@everyone");
     let ann = args.join(" ");
-  if (command === `${prefix}announcement`) {
+  if (cmd === `${prefix}announcement`) {
     if (message.member.hasPermission("ADMINISTRATOR")) {
         const embed = new Discord.RichEmbed()
         .setTitle("Server Announcement")
