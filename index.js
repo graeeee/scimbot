@@ -68,7 +68,7 @@ client.on("message", message => {
         .setDescription(ann)
         .setColor('#1247B5');
         message.channel.send(embed);
-        message.channel.send("@everyone");
+        await message.channel.send("@everyone");
     }
   }
 });
