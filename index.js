@@ -71,5 +71,7 @@ client.on("message", message => {
         message.channel.send(everyone);
         message.channel.send(embed);
         message.everyone.delete(10000);
+    }
+  }
 });
 client.login(process.env.BOT_TOKEN);
