@@ -77,7 +77,6 @@ client.on('message', message => {
     if (message.channel.id === '544706702109442051') {
     await message.react('573608012560728094');
     await message.react('573607997394124813');
-    await message.react('❓');
     }
 });
 client.login(process.env.BOT_TOKEN);
