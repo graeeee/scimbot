@@ -98,7 +98,7 @@ client.on("message", message => {
         .setColor('#1247B5');
         client.channels.get("572614882323857418").send(embed);
         client.channels.get("572614882323857418").send("@everyone");
-        client.channels.get("572614882323857418").react('573608012560728094');
+        client.channels.get("572614882323857418")message.react('573608012560728094');
         message.react('573607997394124813');
     }
   }
