@@ -66,7 +66,7 @@ client.on("message", message => {
         const embed = new Discord.RichEmbed()
         .setTitle("Server Announcement")
         .setDescription(ann)
-        .setFooter(member.user.username, member.user.displayAvatarURL)
+        .setFooter(message.user.username, message.user.displayAvatarURL)
         .setColor('#1247B5');
         message.channel.send("@everyone");
         message.channel.send(embed)
