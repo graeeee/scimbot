@@ -21,7 +21,7 @@ client.on("message", async message => {
       let infoembed = new Discord.RichEmbed()
       .setThumbnail(botpfp)
       .setDescription("**HCUnions Information**")
-      .setColor("#008080")
+      .setColor("#1247B5")
       .addField ("Website", "http://hcunions.org")
       .addField("Store", "http://hcunions.buycraft.net")
       .addField("Server IP", "hcunions.org")
@@ -38,7 +38,7 @@ client.on("message", async message => {
                
                 if(cmd === store){
       let storeembed = new Discord.RichEmbed()
-      .setColor("#008080")
+      .setColor("#1247B5")
       .addField("Store", "http://hcunions.buycraft.net/");
       message.channel.send(storeembed);
                 }
@@ -56,21 +56,21 @@ let joinChannel = member.guild.channels.find('name', 'new-members');
   joinChannel.send(joinEmbed);
 })
 client.on("message", message => {
-    if(message.author.bot) return;
-
+    let prefix = botconfig.prefix;
     let messageArray = message.content.split(" ");
-    let command = messageArray[0];
+    let cmd = messageArray[0];
     let args = messageArray.slice(1);
-
-    if(message.channel.type === "dm") return;
-
-    if(!message.content.startsWith('!')) return;
-
-    if(command === '!announcment') {
-        let channel = message.mentions.channels();
-        let announcement = args.slice(1).join(" ");
-
-        channel.send(announcement);
+    let everyone = message.channel.send("@everyone");
+    let ann = args.join(" ");
+  if (command === "announcement") {
+    if (message.member.hasPermission("ADMINISTRATOR")) {
+        const embed = new Discord.RichEmbed()
+        .setTitle("Server Announcement")
+        .setDescription(ann)
+        .setColor('#1247B5');
+        message.channel.send(everyone);
+        message.channel.send(embed);
+        await message.delete(everyone);
     }
 });
 client.login(process.env.BOT_TOKEN);
