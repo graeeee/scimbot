@@ -102,6 +102,5 @@ client.on("message", message => {
         message.react('573607997394124813');
     }
   }
-}
 });
 client.login(process.env.BOT_TOKEN);
