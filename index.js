@@ -55,5 +55,22 @@ let joinChannel = member.guild.channels.find('name', 'new-members');
   .setTimestamp()
   joinChannel.send(joinEmbed);
 })
+client.on("message", message => {
+    if(message.author.bot) return;
 
+    let messageArray = message.content.split(" ");
+    let command = messageArray[0];
+    let args = messageArray.slice(1);
+
+    if(message.channel.type === "dm") return;
+
+    if(!message.content.startsWith('!')) return;
+
+    if(command === '!announcment') {
+        let channel = message.mentions.channels();
+        let announcement = args.slice(1).join(" ");
+
+        channel.send(announcement);
+    }
+}
 client.login(process.env.BOT_TOKEN);
