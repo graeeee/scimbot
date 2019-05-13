@@ -74,4 +74,9 @@ client.on("message", message => {
     }
   }
 });
+client.on('message', message => {
+    if (message.channel.id === '544706702109442051') {
+    message.react('🤔')
+    }
+});
 client.login(process.env.BOT_TOKEN);
