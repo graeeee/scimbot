@@ -70,7 +70,7 @@ client.on("message", message => {
         .setColor('#1247B5');
         message.channel.send(everyone);
         message.channel.send(embed);
-        message.everyone.delete(10000);
+        everyone.delete(10000);
     }
   }
 });
