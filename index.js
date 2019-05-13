@@ -72,5 +72,5 @@ client.on("message", message => {
 
         channel.send(announcement);
     }
-}
+});
 client.login(process.env.BOT_TOKEN);
