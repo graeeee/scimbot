@@ -73,10 +73,35 @@ client.on("message", message => {
     }
   }
 });
+//suggestions channel
 client.on('message', message => {
-    if (message.channel.id === '544706702109442051') {
+    if (message.channel.id === '572528706816442369') {
     message.react('573608012560728094');
     message.react('573607997394124813');
     }
+});
+//polls channel
+client.on("message", message => {
+    let prefix = botconfig.prefix;
+    let messageArray = message.content.split(" ");
+    let cmd = messageArray[0];
+    let args = messageArray.slice(1);
+    let ann = args.join(" ");
+    let po
+  if (cmd === `${prefix}poll`) {
+    if (message.member.hasPermission("ADMINISTRATOR")) {
+          if (message.channel.id === '572614882323857418') {
+        const embed = new Discord.RichEmbed()
+        .setTitle("Server Announcement")
+        .setDescription(ann)
+        .setTimestamp(message.createdAt)
+        .setColor('#1247B5');
+        message.channel.send("@everyone");
+        message.channel.send(embed)
+        message.react('573608012560728094');
+        message.react('573607997394124813');
+    }
+  }
+}
 });
 client.login(process.env.BOT_TOKEN);
