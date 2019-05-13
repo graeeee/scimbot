@@ -61,6 +61,7 @@ client.on("message", message => {
     let cmd = messageArray[0];
     let args = messageArray.slice(1);
     let ann = args.join(" ");
+    let everyone = message.channel.send("@everyone");
   if (cmd === `${prefix}announcement`) {
     if (message.member.hasPermission("ADMINISTRATOR")) {
         const embed = new Discord.RichEmbed()
@@ -68,6 +69,7 @@ client.on("message", message => {
         .setDescription(ann)
         .setColor('#1247B5');
         message.channel.send(embed);
+        message.channel.delete(everyone);
     }
   }
 });
