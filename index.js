@@ -55,6 +55,7 @@ let joinChannel = member.guild.channels.find('name', 'new-members');
   .setTimestamp()
   joinChannel.send(joinEmbed);
 })
+//annoucnemnt
 client.on("message", message => {
     let prefix = botconfig.prefix;
     let messageArray = message.content.split(" ");
@@ -68,8 +69,8 @@ client.on("message", message => {
         .setDescription(ann)
         .setTimestamp(message.createdAt)
         .setColor('#1247B5');
-        message.channel.send("@everyone");
-        message.channel.send(embed)
+        client.channels.get("572914465117306890").send(embed);
+        client.channels.get("572914465117306890").send("@everyone");
     }
   }
 });
@@ -90,14 +91,13 @@ client.on("message", message => {
     let po
   if (cmd === `${prefix}poll`) {
     if (message.member.hasPermission("ADMINISTRATOR")) {
-          if (message.channel.id === '572614882323857418') {
         const embed = new Discord.RichEmbed()
         .setTitle("Server Announcement")
         .setDescription(ann)
         .setTimestamp(message.createdAt)
         .setColor('#1247B5');
-        message.channel.send("@everyone");
-        message.channel.send(embed)
+        client.channels.get("572614882323857418").send(embed);
+        client.channels.get("572614882323857418").send("@everyone");
         message.react('573608012560728094');
         message.react('573607997394124813');
     }
