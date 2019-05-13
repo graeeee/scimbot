@@ -68,6 +68,7 @@ client.on("message", message => {
         .setDescription(ann)
         .setFooter(member.user.username, member.user.displayAvatarURL)
         .setColor('#1247B5');
+        message.channel.send("@everyone");
         message.channel.send(embed)
     }
   }
