@@ -75,8 +75,8 @@ client.on("message", message => {
 });
 client.on('message', message => {
     if (message.channel.id === '544706702109442051') {
-    message.react('<:plus1:573608012560728094>')
-    message.react('<:minus1:573607997394124813>')
+    message.react(':plus1:573608012560728094')
+    message.react(':minus1:573607997394124813')
     message.react('❓')
     }
 });
