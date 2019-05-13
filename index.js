@@ -60,7 +60,6 @@ client.on("message", message => {
     let messageArray = message.content.split(" ");
     let cmd = messageArray[0];
     let args = messageArray.slice(1);
-    let everyone = message.channel.send("@everyone");
     let ann = args.join(" ");
   if (cmd === `${prefix}announcement`) {
     if (message.member.hasPermission("ADMINISTRATOR")) {
