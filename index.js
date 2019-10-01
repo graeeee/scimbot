@@ -55,15 +55,7 @@ let joinChannel = member.guild.channels.find('name', 'new-members');
   .setTimestamp()
   joinChannel.send(joinEmbed);
 })
-bot.on
-//suggestions channel
-client.on('message', message => {
-    if (message.channel.id === '572528706816442369') {
-    message.react('573608012560728094');
-    message.react('573607997394124813');
-    }
-});
-bot.on('message', message=>{
+client.on('message', message=>{
     
   let args = message.content.substring(PREFIX.length).split(" ");
 
