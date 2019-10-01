@@ -69,7 +69,7 @@ switch(args [0]){
           message.member.roles.find(role => role.name === "Head-Admin") ||
           message.member.roles.find(role => role.name === "Admin"))
         if(!args[1]) return message.channel.sendMessage('> Please include a **number** of lines to clean up!')
-      await message.channel.bulkDelete(args[1]);
+      message.channel.bulkDelete(args[1]);
         
       }
 });
