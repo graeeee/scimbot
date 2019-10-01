@@ -38,7 +38,7 @@ client.on("message", async message => {
                
                 if(cmd === store){
       let storeembed = new Discord.RichEmbed()
-      .setColor("#1247B5")
+      .setColor("#FF0000")
       .addField("Store", "http://alpha5v5.org/store");
       message.channel.send(storeembed);
                 }
