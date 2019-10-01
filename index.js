@@ -72,7 +72,6 @@ bot.on('message', message=>{
        if(message.member.roles.find(role => role.name === "Owner") ||
             message.member.roles.find(role => role.name === "Head-Admins") ||
             message.member.roles.find(role => role.name === "Admins")
-          else message.channel.send("No permission");
           {
           if(!msgcount)
          return message.channel.send("Incorrect usage.");
