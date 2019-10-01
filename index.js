@@ -60,7 +60,7 @@ client.on('message', message=>{
     let messageArray = message.content.split(" ");
     let cmd = messageArray[0];
     let args = messageArray.slice(1);
-  let args = message.content.substring(PREFIX.length).split(" ");
+  let args = message.content.substring(prefix.length).split(" ");
 
   switch(args [0]){
 
