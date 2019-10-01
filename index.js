@@ -56,19 +56,22 @@ let joinChannel = member.guild.channels.find('name', 'new-members');
   joinChannel.send(joinEmbed);
 })
 client.on('message', message=>{
-    let prefix = botconfig.prefix;
-    let messageArray = message.content.split(" ");
-    let cmd = messageArray[0];
-  let args = message.content.substring(prefix.length).split(" ");
+  let prefix = botconfig.prefix;
+  let messageArray = message.content.split(" ");
+  let cmd = messageArray[0];
+let args = message.content.substring(prefix.length).split(" ");
 
-  switch(args [0]){
+switch(args [0]){
 
 
-      case 'purge':
-          if(!args[1]) return message.channel.sendMessage('> Please include a **number** of lines to clean up!')
-          message.channel.bulkDelete(args[1]);
-      break;
-          }
+    case 'purge':
+     if(message.member.roles.find(role => role.name === "Owner") ||
+          message.member.roles.find(role => role.name === "Head-Admin") ||
+          message.member.roles.find(role => role.name === "Admin"))
+        if(!args[1]) return message.channel.sendMessage('> Please include a **number** of lines to clean up!')
+      await message.channel.bulkDelete(args[1]);
+        
+      }
 });
 
 client.login(process.env.BOT_TOKEN);
