@@ -6,7 +6,7 @@ const client = new Discord.Client();
 client.on("ready", async () => {
   console.log(`${client.user.username} is online!`);
 
-  client.user.setActivity("Taken 5v5s | taken5v5.org", {type: "PLAYING"});
+  client.user.setActivity("Alpha 5v5s | alpha5v5.org", {type: "PLAYING"});
 
 });
 client.on("message", async message => {
@@ -22,9 +22,9 @@ client.on("message", async message => {
       .setThumbnail(botpfp)
       .setDescription("**Server Information**")
       .setColor("#FF0000")
-      .addField ("Website", "https://taken5v5.org/home")
-      .addField("Store", "https://taken5v5.org/store")
-      .addField("Server IPs", "https://taken5v5.org/servers")
+      .addField ("Website", "https://alpha5v5.org/home")
+      .addField("Store", "https://alpha5v5.org/store")
+      .addField("Server IPs", "https://alpha5v5.org/servers")
       .addField("Discord Member Count", `${message.guild.memberCount}`);
       message.channel.send(infoembed);
                 }
@@ -39,7 +39,7 @@ client.on("message", async message => {
                 if(cmd === store){
       let storeembed = new Discord.RichEmbed()
       .setColor("#1247B5")
-      .addField("Store", "http://taken5v5.org/store");
+      .addField("Store", "http://alpha5v5.org/store");
       message.channel.send(storeembed);
                 }
 });
@@ -50,7 +50,7 @@ let joinChannel = member.guild.channels.find('name', 'new-members');
   .setAuthor("New User Joined") 
   .setThumbnail(member.user.avatarURL)
   .setDescription(`<@${member.id}> has joined the server\n\nCurrent member count: ${member.guild.memberCount}`)
-  .setColor('#008080')
+  .setColor('#FF0000')
   .setFooter(member.user.username, member.user.displayAvatarURL)
   .setTimestamp()
   joinChannel.send(joinEmbed);
