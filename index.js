@@ -65,19 +65,16 @@ client.on('message', message => {
 });
 bot.on('message', message=>{
     
-    let msgcount = args[1];
-  if(cmd === `${prefix}purge`)
-  {
-  
-       if(message.member.roles.find(role => role.name === "Owner") ||
-            message.member.roles.find(role => role.name === "Head-Admins") ||
-            message.member.roles.find(role => role.name === "Admins")
-          {
-          if(!msgcount)
-         return message.channel.send("Incorrect usage.");
-  }
-  });
-  await(message.channel.bulkDelete(args[1]);
+  let args = message.content.substring(PREFIX.length).split(" ");
 
-    switch(args [0]){
+  switch(args [0]){
+
+
+      case 'purge':
+          if(!args[1]) return message.channel.sendMessage('> Please include a **number** of lines to clean up!')
+          message.channel.bulkDelete(args[1]);
+      break;
+          }
+});
+
 client.login(process.env.BOT_TOKEN);
