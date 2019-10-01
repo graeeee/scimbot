@@ -55,25 +55,7 @@ let joinChannel = member.guild.channels.find('name', 'new-members');
   .setTimestamp()
   joinChannel.send(joinEmbed);
 })
-//annoucement
-client.on("message", message => {
-    let prefix = botconfig.prefix;
-    let messageArray = message.content.split(" ");
-    let cmd = messageArray[0];
-    let args = messageArray.slice(1);
-    let ann = args.join(" ");
-  if (cmd === `${prefix}announcement`) {
-    if (message.member.hasPermission("ADMINISTRATOR")) {
-        const embed = new Discord.RichEmbed()
-        .setTitle("Server Announcement")
-        .setDescription(ann)
-        .setTimestamp(message.createdAt)
-        .setColor('#1247B5');
-        client.channels.get("572914465117306890").send(embed);
-        client.channels.get("572914465117306890").send("@everyone");
-    }
-  }
-});
+bot.on
 //suggestions channel
 client.on('message', message => {
     if (message.channel.id === '572528706816442369') {
@@ -81,4 +63,22 @@ client.on('message', message => {
     message.react('573607997394124813');
     }
 });
+bot.on('message', message=>{
+    
+    let msgcount = args[1];
+  if(cmd === `${prefix}purge`)
+  {
+  
+       if(message.member.roles.find(role => role.name === "Owner") ||
+            message.member.roles.find(role => role.name === "Head-Admins") ||
+            message.member.roles.find(role => role.name === "Admins")
+          else message.channel.send("No permission");
+          {
+          if(!msgcount)
+         return message.channel.send("Incorrect usage.");
+  }
+  });
+  await(message.channel.bulkDelete(args[1]);
+
+    switch(args [0]){
 client.login(process.env.BOT_TOKEN);
