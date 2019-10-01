@@ -6,7 +6,7 @@ const client = new Discord.Client();
 client.on("ready", async () => {
   console.log(`${client.user.username} is online!`);
 
-  client.user.setActivity("Taken 5v5 servers | taken5v5.org", {type: "PLAYING"});
+  client.user.setActivity("Taken 5v5s | taken5v5.org", {type: "PLAYING"});
 
 });
 client.on("message", async message => {
