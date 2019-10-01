@@ -6,7 +6,7 @@ const client = new Discord.Client();
 client.on("ready", async () => {
   console.log(`${client.user.username} is online!`);
 
-  client.user.setActivity("hcunions.org | !info", {type: "PLAYING"});
+  client.user.setActivity("Taken 5v5 servers | taken5v5.org", {type: "PLAYING"});
 
 });
 client.on("message", async message => {
@@ -20,11 +20,11 @@ client.on("message", async message => {
       let botpfp = client.user.displayAvatarURL;
       let infoembed = new Discord.RichEmbed()
       .setThumbnail(botpfp)
-      .setDescription("**HCUnions Information**")
-      .setColor("#1247B5")
-      .addField ("Website", "http://hcunions.org")
-      .addField("Store", "http://hcunions.buycraft.net")
-      .addField("Server IP", "hcunions.org")
+      .setDescription("**Server Information**")
+      .setColor("#FF0000")
+      .addField ("Website", "https://taken5v5.org/home")
+      .addField("Store", "https://taken5v5.org/store")
+      .addField("Server IPs", "https://taken5v5.org/servers")
       .addField("Discord Member Count", `${message.guild.memberCount}`);
       message.channel.send(infoembed);
                 }
@@ -39,7 +39,7 @@ client.on("message", async message => {
                 if(cmd === store){
       let storeembed = new Discord.RichEmbed()
       .setColor("#1247B5")
-      .addField("Store", "http://hcunions.buycraft.net/");
+      .addField("Store", "http://taken5v5.org/store");
       message.channel.send(storeembed);
                 }
 });
