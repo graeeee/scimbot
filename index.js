@@ -21,7 +21,7 @@ client.on("message", async message => {
       let infoembed = new Discord.RichEmbed()
       .setThumbnail(botpfp)
       .setDescription("**Server Information**")
-      .setColor("#FF0000")
+      .setColor("#f04abc")
       .addField ("Website", "https://alpha5v5.org/home")
       .addField("Store", "https://alpha5v5.org/store")
       .addField("Server IPs", "https://alpha5v5.org/servers")
@@ -38,7 +38,7 @@ client.on("message", async message => {
                
                 if(cmd === store){
       let storeembed = new Discord.RichEmbed()
-      .setColor("#FF0000")
+      .setColor("#f04abc")
       .addField("Store", "http://alpha5v5.org/store");
       message.channel.send(storeembed);
                 }
@@ -50,7 +50,7 @@ let joinChannel = member.guild.channels.find('name', 'new-members');
   .setAuthor("New User Joined") 
   .setThumbnail(member.user.avatarURL)
   .setDescription(`<@${member.id}> has joined the server\n\nCurrent member count: ${member.guild.memberCount}`)
-  .setColor('#FF0000')
+  .setColor('#f04abc')
   .setFooter(member.user.username, member.user.displayAvatarURL)
   .setTimestamp()
   joinChannel.send(joinEmbed);
