@@ -1,2 +1,2 @@
 worker node index.js
-npm install ms --save
+npm install ms
