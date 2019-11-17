@@ -9,16 +9,6 @@ client.on("ready", async () => {
   client.user.setActivity("the Official Krunker Krosshair Discord!", {type: "WATCHING"});
 
 });
-client.on('guildMemberAdd', member => {
-let joinChannel = member.guild.channels.find('name', 'welcome');
-
-  let joinEmbed = new Discord.RichEmbed()
-  .setAuthor(`New User Joined`) 
-  .setThumbnail(member.user.avatarURL)
-  .setDescription(`<@${member.id}> has joined the server\nCurrent member count: ${member.guild.memberCount}`)
-  .setColor('#f04abc')
-  joinChannel.send(joinEmbed);
-})
 client.on("message", async message =>
 {
     if(message.author.bot)
@@ -39,18 +29,13 @@ client.on("message", async message =>
         let tempRole = message.guild.roles.find(role => role.name === "Muted");
        
         if(message.member.roles.find(role => role.name === "Founders") ||
-            message.member.roles.find(role => role.name === "Moderators") ||
+            (message.member.roles.find(role => role.name === "Moderators") ))
         {
             if(!tempUser)
                 return message.channel.send('Invalid Usage, **!mute <@User#1234> <time>**');
            
             if(!tempTime)
                 return message.channel.send('Invalid Usage, **!mute <@User#1234> <time>**');
-
-            if(!tempReason)
-            {
-                tempReason = "N/A";
-            }
            
             await(tempUser.addRole(tempRole.id).catch(console.error));
            
@@ -65,7 +50,6 @@ client.on("message", async message =>
         {
             message.channel.send("No permission.");
         }
-    }
+      }
 });
-
 client.login(process.env.BOT_TOKEN);
