@@ -5,7 +5,6 @@
     "main": "index.js",
 "scripts": {
     "start": "node index.js"
-    "npm": "install ms"
     },
     "author": "grae",
     "license": "ISC",
